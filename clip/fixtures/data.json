@@ -92,7 +92,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x", 
-    "name": "\u8fb9\u5c01"
+    "name": "\u8fb9\u5c01", 
+    "order": 100
   }
 },
 {
@@ -100,7 +101,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "y-a", 
-    "name": "\u4e0a\u4e0b\u6ed1"
+    "name": "\u4e0a\u4e0b\u6ed1", 
+    "order": 102
   }
 },
 {
@@ -108,7 +110,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "(y-a)/2", 
-    "name": "\u4e0a\u65b9"
+    "name": "\u4e0a\u65b9", 
+    "order": 200
   }
 },
 {
@@ -116,7 +119,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "(y-a)/2", 
-    "name": "\u4e2d\u65b9"
+    "name": "\u4e2d\u65b9", 
+    "order": 201
   }
 },
 {
@@ -124,7 +128,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "(y-a)/2", 
-    "name": "\u4e0b\u65b9"
+    "name": "\u4e0b\u65b9", 
+    "order": 202
   }
 },
 {
@@ -132,7 +137,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-a", 
-    "name": "\u5149\u52fe\u4f011"
+    "name": "\u5149\u52fe\u4f011", 
+    "order": 300
   }
 },
 {
@@ -140,7 +146,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-a", 
-    "name": "\u5149\u52fe\u4f012"
+    "name": "\u5149\u52fe\u4f012", 
+    "order": 301
   }
 },
 {
@@ -148,7 +155,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "y-a", 
-    "name": "\u56fa\u4e0a\u6ed1"
+    "name": "\u56fa\u4e0a\u6ed1", 
+    "order": 104
   }
 },
 {
@@ -156,7 +164,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-m-a", 
-    "name": "\u4e2d\u67f1"
+    "name": "\u4e2d\u67f1", 
+    "order": 400
   }
 },
 {
@@ -164,7 +173,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-m-a", 
-    "name": "\u8fb9\u76d6"
+    "name": "\u8fb9\u76d6", 
+    "order": 500
   }
 },
 {
@@ -172,7 +182,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-a", 
-    "name": "\u6536\u53e3"
+    "name": "\u6536\u53e3", 
+    "order": 302
   }
 },
 {
@@ -180,7 +191,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "y-a", 
-    "name": "\u56fa\u4e0a\u56fa\u4e0b\u6ed1"
+    "name": "\u56fa\u4e0a\u56fa\u4e0b\u6ed1", 
+    "order": 101
   }
 },
 {
@@ -188,7 +200,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "z-a", 
-    "name": "\u4e2d\u67f11"
+    "name": "\u4e2d\u67f11", 
+    "order": 401
   }
 },
 {
@@ -196,7 +209,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-z-m-a", 
-    "name": "\u4e2d\u67f12"
+    "name": "\u4e2d\u67f12", 
+    "order": 402
   }
 },
 {
@@ -204,7 +218,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "z-a", 
-    "name": "\u8fb9\u76d61"
+    "name": "\u8fb9\u76d61", 
+    "order": 501
   }
 },
 {
@@ -212,7 +227,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-z-m-a", 
-    "name": "\u8fb9\u76d62"
+    "name": "\u8fb9\u76d62", 
+    "order": 502
   }
 },
 {
@@ -220,7 +236,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "y-a", 
-    "name": "\u56fa\u4e0b\u6ed1"
+    "name": "\u56fa\u4e0b\u6ed1", 
+    "order": 103
   }
 },
 {
@@ -228,7 +245,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "(y-a)/4", 
-    "name": "\u4e0a\u65b9"
+    "name": "\u4e0a\u65b9", 
+    "order": 200
   }
 },
 {
@@ -236,7 +254,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "(y-a)/4", 
-    "name": "\u4e2d\u65b9"
+    "name": "\u4e2d\u65b9", 
+    "order": 201
   }
 },
 {
@@ -244,7 +263,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "(y-a)/4", 
-    "name": "\u4e0b\u65b9"
+    "name": "\u4e0b\u65b9", 
+    "order": 202
   }
 },
 {
@@ -252,7 +272,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "m-a", 
-    "name": "\u5149\u52fe\u4f011"
+    "name": "\u5149\u52fe\u4f011", 
+    "order": 300
   }
 },
 {
@@ -260,7 +281,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "m-a", 
-    "name": "\u5149\u52fe\u4f012"
+    "name": "\u5149\u52fe\u4f012", 
+    "order": 301
   }
 },
 {
@@ -268,7 +290,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "m-a", 
-    "name": "\u6536\u53e3"
+    "name": "\u6536\u53e3", 
+    "order": 302
   }
 },
 {
