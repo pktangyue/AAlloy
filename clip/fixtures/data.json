@@ -110,26 +110,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "(y-a)/2", 
-    "name": "\u4e0a\u65b9", 
+    "name": "\u4e0a\u4e0b\u65b9", 
     "order": 200
-  }
-},
-{
-  "pk": 4, 
-  "model": "clip.productname", 
-  "fields": {
-    "formula": "(y-a)/2", 
-    "name": "\u4e2d\u65b9", 
-    "order": 201
-  }
-},
-{
-  "pk": 5, 
-  "model": "clip.productname", 
-  "fields": {
-    "formula": "(y-a)/2", 
-    "name": "\u4e0b\u65b9", 
-    "order": 202
   }
 },
 {
@@ -245,26 +227,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "(y-a)/4", 
-    "name": "\u4e0a\u65b9", 
+    "name": "\u4e0a\u4e0b\u65b9", 
     "order": 200
-  }
-},
-{
-  "pk": 19, 
-  "model": "clip.productname", 
-  "fields": {
-    "formula": "(y-a)/4", 
-    "name": "\u4e2d\u65b9", 
-    "order": 201
-  }
-},
-{
-  "pk": 20, 
-  "model": "clip.productname", 
-  "fields": {
-    "formula": "(y-a)/4", 
-    "name": "\u4e0b\u65b9", 
-    "order": 202
   }
 },
 {
@@ -322,24 +286,6 @@
   }
 },
 {
-  "pk": 4, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 1, 
-    "num": 1, 
-    "product_name": 4
-  }
-},
-{
-  "pk": 5, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 1, 
-    "num": 1, 
-    "product_name": 5
-  }
-},
-{
   "pk": 6, 
   "model": "clip.product", 
   "fields": {
@@ -382,24 +328,6 @@
     "window": 2, 
     "num": 4, 
     "product_name": 18
-  }
-},
-{
-  "pk": 11, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 2, 
-    "num": 2, 
-    "product_name": 19
-  }
-},
-{
-  "pk": 12, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 2, 
-    "num": 2, 
-    "product_name": 20
   }
 },
 {
@@ -454,24 +382,6 @@
     "window": 3, 
     "num": 2, 
     "product_name": 3
-  }
-},
-{
-  "pk": 19, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 3, 
-    "num": 1, 
-    "product_name": 4
-  }
-},
-{
-  "pk": 20, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 3, 
-    "num": 1, 
-    "product_name": 5
   }
 },
 {
@@ -535,24 +445,6 @@
     "window": 4, 
     "num": 4, 
     "product_name": 18
-  }
-},
-{
-  "pk": 28, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 4, 
-    "num": 2, 
-    "product_name": 19
-  }
-},
-{
-  "pk": 29, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 4, 
-    "num": 2, 
-    "product_name": 20
   }
 },
 {
@@ -628,24 +520,6 @@
   }
 },
 {
-  "pk": 38, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 5, 
-    "num": 1, 
-    "product_name": 4
-  }
-},
-{
-  "pk": 39, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 5, 
-    "num": 1, 
-    "product_name": 5
-  }
-},
-{
   "pk": 40, 
   "model": "clip.product", 
   "fields": {
@@ -706,24 +580,6 @@
     "window": 6, 
     "num": 4, 
     "product_name": 18
-  }
-},
-{
-  "pk": 47, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 6, 
-    "num": 2, 
-    "product_name": 19
-  }
-},
-{
-  "pk": 48, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 6, 
-    "num": 2, 
-    "product_name": 20
   }
 },
 {
@@ -796,24 +652,6 @@
     "window": 7, 
     "num": 4, 
     "product_name": 18
-  }
-},
-{
-  "pk": 57, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 7, 
-    "num": 2, 
-    "product_name": 19
-  }
-},
-{
-  "pk": 58, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 7, 
-    "num": 2, 
-    "product_name": 20
   }
 },
 {
@@ -907,24 +745,6 @@
   }
 },
 {
-  "pk": 69, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 8, 
-    "num": 1, 
-    "product_name": 4
-  }
-},
-{
-  "pk": 70, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 8, 
-    "num": 1, 
-    "product_name": 5
-  }
-},
-{
   "pk": 71, 
   "model": "clip.product", 
   "fields": {
@@ -1006,24 +826,6 @@
   }
 },
 {
-  "pk": 80, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 9, 
-    "num": 1, 
-    "product_name": 4
-  }
-},
-{
-  "pk": 81, 
-  "model": "clip.product", 
-  "fields": {
-    "window": 9, 
-    "num": 1, 
-    "product_name": 5
-  }
-},
-{
   "pk": 82, 
   "model": "clip.product", 
   "fields": {
@@ -1078,24 +880,6 @@
   }
 },
 {
-  "pk": 4, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 4, 
-    "material": 1
-  }
-},
-{
-  "pk": 5, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 5, 
-    "material": 1
-  }
-},
-{
   "pk": 6, 
   "model": "clip.producttrim", 
   "fields": {
@@ -1137,24 +921,6 @@
   "fields": {
     "trim_length": "23.400", 
     "product": 10, 
-    "material": 1
-  }
-},
-{
-  "pk": 11, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "23.400", 
-    "product": 11, 
-    "material": 1
-  }
-},
-{
-  "pk": 12, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "23.400", 
-    "product": 12, 
     "material": 1
   }
 },
@@ -1209,24 +975,6 @@
   "fields": {
     "trim_length": "13.000", 
     "product": 18, 
-    "material": 1
-  }
-},
-{
-  "pk": 19, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 19, 
-    "material": 1
-  }
-},
-{
-  "pk": 20, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 20, 
     "material": 1
   }
 },
@@ -1290,24 +1038,6 @@
   "fields": {
     "trim_length": "23.400", 
     "product": 27, 
-    "material": 1
-  }
-},
-{
-  "pk": 28, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "23.400", 
-    "product": 28, 
-    "material": 1
-  }
-},
-{
-  "pk": 29, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "23.400", 
-    "product": 29, 
     "material": 1
   }
 },
@@ -1384,24 +1114,6 @@
   }
 },
 {
-  "pk": 38, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 38, 
-    "material": 1
-  }
-},
-{
-  "pk": 39, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 39, 
-    "material": 1
-  }
-},
-{
   "pk": 40, 
   "model": "clip.producttrim", 
   "fields": {
@@ -1461,24 +1173,6 @@
   "fields": {
     "trim_length": "23.400", 
     "product": 46, 
-    "material": 1
-  }
-},
-{
-  "pk": 47, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "23.400", 
-    "product": 47, 
-    "material": 1
-  }
-},
-{
-  "pk": 48, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "23.400", 
-    "product": 48, 
     "material": 1
   }
 },
@@ -1551,24 +1245,6 @@
   "fields": {
     "trim_length": "23.400", 
     "product": 56, 
-    "material": 1
-  }
-},
-{
-  "pk": 57, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "23.400", 
-    "product": 57, 
-    "material": 1
-  }
-},
-{
-  "pk": 58, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "23.400", 
-    "product": 58, 
     "material": 1
   }
 },
@@ -1663,24 +1339,6 @@
   }
 },
 {
-  "pk": 69, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 69, 
-    "material": 1
-  }
-},
-{
-  "pk": 70, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 70, 
-    "material": 1
-  }
-},
-{
   "pk": 71, 
   "model": "clip.producttrim", 
   "fields": {
@@ -1758,24 +1416,6 @@
   "fields": {
     "trim_length": "13.000", 
     "product": 79, 
-    "material": 1
-  }
-},
-{
-  "pk": 80, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 80, 
-    "material": 1
-  }
-},
-{
-  "pk": 81, 
-  "model": "clip.producttrim", 
-  "fields": {
-    "trim_length": "13.000", 
-    "product": 81, 
     "material": 1
   }
 },
