@@ -21,7 +21,7 @@ class Product(models.Model):
     num = models.IntegerField(default=0)
     formula = models.CharField(max_length=100)
 
-class Product_trim(models.Model):
+class ProductTrim(models.Model):
     window = models.ForeignKey(Window)
     material = models.ForeignKey(Material)
     product = models.ForeignKey(Product)
