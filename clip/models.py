@@ -17,15 +17,15 @@ class Material(models.Model):
 
 class ProductName(models.Model):
     name = models.CharField(max_length=50)
+    formula = models.CharField(max_length=100)
 
     def __unicode__(self):
-        return self.name
+        return self.name  + "(" + self.formula + ")"
 
 class Product(models.Model):
     window = models.ForeignKey(Window)
     product_name = models.ForeignKey(ProductName)
     num = models.IntegerField(default=0)
-    formula = models.CharField(max_length=100)
 
     def __unicode__(self):
         return self.window.__unicode__() + " : " + self.product_name.__unicode__()
