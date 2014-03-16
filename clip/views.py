@@ -49,7 +49,9 @@ def submit(request):
 
     return HttpResponseRedirect(reverse('clip:result'))
 
-def result(request):
+def record(request, record_id):
+    record = Record.objects.get(pk=record_id)
     context = {
+            'record' : record
             }
-    return render(request, "clip/result.html", context)
+    return render(request, "clip/record.html", context)
