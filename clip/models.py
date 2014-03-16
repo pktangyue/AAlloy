@@ -1,10 +1,9 @@
 from django.db import models
 
 class Window(models.Model):
-#    x = models.DecimalField(default=0)
-#    y = models.DecimalField(default=0)
-#    m = models.DecimalField(default=0)
     name = models.CharField(max_length=50)
+    need_m = models.BooleanField(default=False)
+    need_z = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.name
