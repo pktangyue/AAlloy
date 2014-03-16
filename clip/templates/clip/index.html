@@ -73,7 +73,7 @@
                     </tr>
                     <tr>
                         <td colspan=4 class='text-center'>
-                            <button type='submit' class='btn btn-primary btn-lg '>提交</button>
+                            <button id='submit' type='submit' class='btn btn-primary btn-lg '>提交</button>
                         </td>
                     </tr>
                 </tbody>
@@ -89,15 +89,21 @@
         $('.clip-num-btn').click(function(){
             var $this = $(this);
             var $tr = $this.parents('tr');
-            $tr.find('input').prop('disabled', !$this.hasClass('btn-danger'));
+            var is_selected = !!$this.hasClass('btn-danger');
+            $tr.find('input').prop('disabled', !is_selected);
             $tr.toggleClass('success');
             $this.toggleClass('btn-success btn-danger');
-            $this.parent().next().focus();
+            if (is_selected)
+            {
+                $this.parent().next().focus()
+            } else {
+                $this.parents('.form-group').removeClass('has-error');
+            }
         });
         $('.clip-num').focusout(function(){
             var $this = $(this);
             var value = parseInt($this.val());
-            if (isNaN(value)){
+            if (isNaN(value) && $this.prop('disabled')){
                 $this.focus();
                 $this.parents('.form-group').addClass('has-error');
                 return;
@@ -108,6 +114,14 @@
                 total_num += parseInt($(this).val());
             });
             $('#clip-total-num').html(total_num);
+        });
+        $('#submit').click(function(){
+            var num_count = $('.clip-num').not(':disabled').size();
+            if (num_count == 0)
+            {
+                alert('你还没有进行选择！');
+                return false;
+            }
         });
     });
 </script>

@@ -47,7 +47,7 @@ def submit(request):
 
     record.save()
 
-    return HttpResponseRedirect(reverse('clip:result'))
+    return HttpResponseRedirect(reverse('clip:record', args=[record.pk]))
 
 def record(request, record_id):
     record = Record.objects.get(pk=record_id)
