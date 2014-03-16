@@ -10,3 +10,7 @@
 .index-table>thead>tr>td.center,
 .index-table>tbody>tr>td.center,
 .index-table>tfoot>tr>td.center { text-align:center; }
+
+.record-window-container { padding: 10px 3px; }
+.record-window { margin-right: 10px; }
+.record-window p { margin-left: 85px; margin-bottom: 0px; }

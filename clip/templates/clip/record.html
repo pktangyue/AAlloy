@@ -1,4 +1,5 @@
 {% extends "clip/base.html" %}
+{% load staticfiles %}
 
 {% block title %}计算结果{% endblock %}
 
@@ -6,6 +7,17 @@
 <div class='panel panel-primary'>
     <div class='panel-heading'>计算结果
         <button class='btn btn-success pull-right' style='margin-top:-7px;' onclick='javascript:window.print();'>打印</button>
+    </div>
+    <div class='panel-body record-window-container'>
+        {% for record_window in record_windows %}
+        <div class='record-window pull-left'>
+            <img class='pull-left' width='80px' height='auto' src='{% static "clip/images/" %}{{ record_window.window.id }}.png'/>
+            <p>x=<strong>{{ record_window.x }}</strong></p>
+            <p>y=<strong>{{ record_window.y }}</strong></p>
+            {% if record_window.window.need_m %}<p>m=<strong>{{ record_window.m }}</strong></p>{% endif %}
+            {% if record_window.window.need_z %}<p>z=<strong>{{ record_window.z }}</strong></p>{% endif %}
+        </div>
+        {% endfor %}
     </div>
     <table class='table table-striped table-hover table-bordered'>
         <thead>

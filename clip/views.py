@@ -68,7 +68,7 @@ def record(request, record_id):
     results = OrderedDict(sorted(results.items(), key=lambda t: t[0]))
     context = {
             'record' : record,
-            'record_windows' : record.recordwindow_set,
+            'record_windows' : record.recordwindow_set.all(),
             'results' : results,
             }
     return render(request, "clip/record.html", context)
