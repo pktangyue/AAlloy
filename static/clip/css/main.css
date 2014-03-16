@@ -11,6 +11,7 @@
 .index-table>tbody>tr>td.center,
 .index-table>tfoot>tr>td.center { text-align:center; }
 
-.record-window-container { padding: 10px 3px; }
-.record-window { margin-right: 10px; }
-.record-window p { margin-left: 85px; margin-bottom: 0px; }
+.record-window-container { padding: 0 5px; }
+.record-window { margin: 5px 12px 0 0; }
+.record-window p { margin-left: 90px; margin-bottom: 0px; }
+.record-window-num { margin-left: 36px;}
