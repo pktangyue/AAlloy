@@ -62,7 +62,8 @@ def record(request, record_id):
         try:
             results[order][name][length] += num
         except:
-            results[order] = { name : { length : num }}
+            results.setdefault(order,{}).setdefault(name,{}).setdefault(length,num)
+
 
     results = OrderedDict(sorted(results.items(), key=lambda t: t[0]))
     context = {
