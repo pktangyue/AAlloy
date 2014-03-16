@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from decimal import Decimal
 import parser
+from collections import OrderedDict
 
 def index(request):
     context = {
@@ -55,17 +56,15 @@ def record(request, record_id):
     record_products = record.recordproduct_set.all()
     for record_product in record_products:
         name = record_product.product.product_name.name
+        order = record_product.product.product_name.order
         length = record_product.length
         num = record_product.num
-        if results.has_key(name):
-            result_name = results[name]
-            if result_name.has_key(length):
-                results[name][length] += num
-            else:
-                results[name][length] = num
-        else:
-            results[name] = { length : num }
+        try:
+            results[order][name][length] += num
+        except:
+            results[order] = { name : { length : num }}
 
+    results = OrderedDict(sorted(results.items(), key=lambda t: t[0]))
     context = {
             'record' : record,
             'record_windows' : record.recordwindow_set,

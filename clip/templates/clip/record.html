@@ -15,7 +15,8 @@
                 <th>数量</th>
             </tr>
         </thead>
-        {% for name , value in results.items %}
+        {% for order , value1 in results.items %}
+        {% for name , value in value1.items %}
         {% for l, num in value.items %}
         <tr>
             {% if forloop.first %}
@@ -24,6 +25,7 @@
             <td>{{ l }}</td>
             <td>{{ num }}</td>
         </tr>
+        {% endfor %}
         {% endfor %}
         {% endfor %}
     </table>
