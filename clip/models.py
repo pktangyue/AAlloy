@@ -47,10 +47,10 @@ class Record(models.Model):
 class RecordWindow(models.Model):
     record = models.ForeignKey(Record)
     window = models.ForeignKey(Window)
-    x = models.DecimalField( max_digits=5, decimal_places=2)
-    y = models.DecimalField( max_digits=5, decimal_places=2)
-    m = models.DecimalField( max_digits=5, decimal_places=2)
-    z = models.DecimalField( max_digits=5, decimal_places=2)
+    x = models.DecimalField( max_digits=5, decimal_places=1)
+    y = models.DecimalField( max_digits=5, decimal_places=1)
+    m = models.DecimalField( max_digits=5, decimal_places=1)
+    z = models.DecimalField( max_digits=5, decimal_places=1)
     num = models.IntegerField()
 
     def __unicode__(self):
@@ -59,7 +59,7 @@ class RecordWindow(models.Model):
 class RecordProduct(models.Model):
     record = models.ForeignKey(Record)
     product = models.ForeignKey(Product)
-    length = models.DecimalField( max_digits=5, decimal_places=2)
+    length = models.DecimalField( max_digits=5, decimal_places=1)
     num = models.IntegerField()
 
     def __unicode__(self):
