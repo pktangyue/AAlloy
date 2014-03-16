@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from clip.models import Window
+from clip.models import Window, Record
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from decimal import Decimal
@@ -26,18 +26,22 @@ def submit(request):
         y = Decimal(request.POST.get('y_%d' % id, 0))
         m = Decimal(request.POST.get('m_%d' % id, 0))
         z = Decimal(request.POST.get('z_%d' % id, 0))
+
+        record = Record()
+        record.save()
+        record.recordwindow_set.create(window = window, x = x, y = y, m = m, z = z, num = num)
+
         products = window.product_set.all()
         for product in products:
             formula = product.product_name.formula
             a = product.producttrim_set.get(material_id=1).trim_length
             code = parser.expr(formula).compile()
             length = eval(code)
-            result = {
-                    'name' : product.product_name,
-                    'length' : length,
-                    'num' : num * product.num
-                    }
-            results.append(result)
+            product_num = num * product.num
+
+            record.recordproduct_set.create(product = product, length = length, num = product_num)
+
+        record.save()
 
     return HttpResponseRedirect(reverse('clip:result'))
 
