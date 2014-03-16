@@ -36,3 +36,30 @@ class ProductTrim(models.Model):
 
     def __unicode__(self):
         return self.material.__unicode__() + " : " + self.product.__unicode__()
+
+class Record(models.Model):
+    create_time = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return str(self.create_time.datetime)
+
+class RecordWindow(models.Model):
+    record = models.ForeignKey(Record)
+    window = models.ForeignKey(Window)
+    x = models.DecimalField( max_digits=5, decimal_places=2)
+    y = models.DecimalField( max_digits=5, decimal_places=2)
+    m = models.DecimalField( max_digits=5, decimal_places=2)
+    z = models.DecimalField( max_digits=5, decimal_places=2)
+    num = models.IntegerField()
+
+    def __unicode__(self):
+        return self.record.__unicode__() + " : " + self.window.__unicode__()
+
+class RecordProduct(models.Model):
+    record = models.ForeignKey(Record)
+    product = models.ForeignKey(Product)
+    length = models.DecimalField( max_digits=5, decimal_places=2)
+    num = models.IntegerField()
+
+    def __unicode__(self):
+        return self.record.__unicode__() + " : " + self.product.__unicode__()
