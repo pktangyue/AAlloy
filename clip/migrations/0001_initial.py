@@ -22,25 +22,31 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'clip', ['Material'])
 
+        # Adding model 'ProductName'
+        db.create_table(u'clip_productname', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
+        ))
+        db.send_create_signal(u'clip', ['ProductName'])
+
         # Adding model 'Product'
         db.create_table(u'clip_product', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('window', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['clip.Window'])),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
+            ('product_name', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['clip.ProductName'])),
             ('num', self.gf('django.db.models.fields.IntegerField')(default=0)),
             ('formula', self.gf('django.db.models.fields.CharField')(max_length=100)),
         ))
         db.send_create_signal(u'clip', ['Product'])
 
-        # Adding model 'Product_trim'
-        db.create_table(u'clip_product_trim', (
+        # Adding model 'ProductTrim'
+        db.create_table(u'clip_producttrim', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('window', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['clip.Window'])),
             ('material', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['clip.Material'])),
             ('product', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['clip.Product'])),
             ('trim_length', self.gf('django.db.models.fields.DecimalField')(default=0, max_digits=10, decimal_places=3)),
         ))
-        db.send_create_signal(u'clip', ['Product_trim'])
+        db.send_create_signal(u'clip', ['ProductTrim'])
 
 
     def backwards(self, orm):
@@ -50,11 +56,14 @@ class Migration(SchemaMigration):
         # Deleting model 'Material'
         db.delete_table(u'clip_material')
 
+        # Deleting model 'ProductName'
+        db.delete_table(u'clip_productname')
+
         # Deleting model 'Product'
         db.delete_table(u'clip_product')
 
-        # Deleting model 'Product_trim'
-        db.delete_table(u'clip_product_trim')
+        # Deleting model 'ProductTrim'
+        db.delete_table(u'clip_producttrim')
 
 
     models = {
@@ -67,17 +76,21 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Product'},
             'formula': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'num': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
+            'product_name': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['clip.ProductName']"}),
             'window': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['clip.Window']"})
         },
-        u'clip.product_trim': {
-            'Meta': {'object_name': 'Product_trim'},
+        u'clip.productname': {
+            'Meta': {'object_name': 'ProductName'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
+        },
+        u'clip.producttrim': {
+            'Meta': {'object_name': 'ProductTrim'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'material': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['clip.Material']"}),
             'product': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['clip.Product']"}),
-            'trim_length': ('django.db.models.fields.DecimalField', [], {'default': '0', 'max_digits': '10', 'decimal_places': '3'}),
-            'window': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['clip.Window']"})
+            'trim_length': ('django.db.models.fields.DecimalField', [], {'default': '0', 'max_digits': '10', 'decimal_places': '3'})
         },
         u'clip.window': {
             'Meta': {'object_name': 'Window'},
