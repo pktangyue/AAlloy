@@ -72,6 +72,15 @@
   }
 },
 {
+  "pk": 10, 
+  "model": "clip.window", 
+  "fields": {
+    "need_m": true, 
+    "name": "<+> -", 
+    "need_z": false
+  }
+},
+{
   "pk": 1, 
   "model": "clip.material", 
   "fields": {
@@ -947,6 +956,78 @@
   }
 },
 {
+  "pk": 77, 
+  "model": "clip.product", 
+  "fields": {
+    "window": 10, 
+    "num": 2, 
+    "product_name": 1
+  }
+},
+{
+  "pk": 78, 
+  "model": "clip.product", 
+  "fields": {
+    "window": 10, 
+    "num": 1, 
+    "product_name": 17
+  }
+},
+{
+  "pk": 79, 
+  "model": "clip.product", 
+  "fields": {
+    "window": 10, 
+    "num": 2, 
+    "product_name": 3
+  }
+},
+{
+  "pk": 80, 
+  "model": "clip.product", 
+  "fields": {
+    "window": 10, 
+    "num": 1, 
+    "product_name": 4
+  }
+},
+{
+  "pk": 81, 
+  "model": "clip.product", 
+  "fields": {
+    "window": 10, 
+    "num": 1, 
+    "product_name": 5
+  }
+},
+{
+  "pk": 82, 
+  "model": "clip.product", 
+  "fields": {
+    "window": 10, 
+    "num": 1, 
+    "product_name": 21
+  }
+},
+{
+  "pk": 83, 
+  "model": "clip.product", 
+  "fields": {
+    "window": 10, 
+    "num": 1, 
+    "product_name": 22
+  }
+},
+{
+  "pk": 84, 
+  "model": "clip.product", 
+  "fields": {
+    "window": 10, 
+    "num": 2, 
+    "product_name": 10
+  }
+},
+{
   "pk": 1, 
   "model": "clip.producttrim", 
   "fields": {
@@ -1004,7 +1085,7 @@
   "pk": 7, 
   "model": "clip.producttrim", 
   "fields": {
-    "trim_length": "7.500", 
+    "trim_length": "6.700", 
     "product": 7, 
     "material": 1
   }
@@ -1627,6 +1708,78 @@
   "fields": {
     "trim_length": "2.500", 
     "product": 76, 
+    "material": 1
+  }
+},
+{
+  "pk": 77, 
+  "model": "clip.producttrim", 
+  "fields": {
+    "trim_length": "0.000", 
+    "product": 77, 
+    "material": 1
+  }
+},
+{
+  "pk": 78, 
+  "model": "clip.producttrim", 
+  "fields": {
+    "trim_length": "2.500", 
+    "product": 78, 
+    "material": 1
+  }
+},
+{
+  "pk": 79, 
+  "model": "clip.producttrim", 
+  "fields": {
+    "trim_length": "13.000", 
+    "product": 79, 
+    "material": 1
+  }
+},
+{
+  "pk": 80, 
+  "model": "clip.producttrim", 
+  "fields": {
+    "trim_length": "13.000", 
+    "product": 80, 
+    "material": 1
+  }
+},
+{
+  "pk": 81, 
+  "model": "clip.producttrim", 
+  "fields": {
+    "trim_length": "13.000", 
+    "product": 81, 
+    "material": 1
+  }
+},
+{
+  "pk": 82, 
+  "model": "clip.producttrim", 
+  "fields": {
+    "trim_length": "5.200", 
+    "product": 82, 
+    "material": 1
+  }
+},
+{
+  "pk": 83, 
+  "model": "clip.producttrim", 
+  "fields": {
+    "trim_length": "6.700", 
+    "product": 83, 
+    "material": 1
+  }
+},
+{
+  "pk": 84, 
+  "model": "clip.producttrim", 
+  "fields": {
+    "trim_length": "2.500", 
+    "product": 84, 
     "material": 1
   }
 }
