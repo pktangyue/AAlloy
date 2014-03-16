@@ -1,4 +1,5 @@
 {% extends "clip/base.html" %}
+{% load staticfiles %}
 
 {% block title %}首页{% endblock %}
 
@@ -8,21 +9,23 @@
         <div class='panel panel-primary'>
             <div class='panel-heading'>进行选择</div>
             <!-- Table -->
-            <table class='table table-striped table-hover'>
+            <table class='table table-striped table-hover index-table'>
                 <thead>
                     <tr>
                         <th style='width:3%'>#</th>
-                        <th style='width:22%'>样式</th>
+                        <th style='width:12%' class='center'>样式</th>
                         <th style='width:15%'>数量</th>
-                        <th style='width:60%'>尺寸</th>
+                        <th style='width:70%'>尺寸</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for window in windows %}
                     <tr>
-                        <td>{{ window.id }}<input type='hidden' name='id_{{ window.id }}' value='@' disabled></td>
-                        <td>{{ window.name }}</td>
-                        <td>
+                        <td class='middle'>{{ window.id }}<input type='hidden' name='id_{{ window.id }}' value='@' disabled></td>
+                        <td class='center'>
+                            <img width='100px' height='auto' src='{% static "clip/images/" %}{{ window.id }}.png'/>
+                        </td>
+                        <td class='middle'>
                             <div class='form-group'>
                                 <div class='input-group'>
                                     <span class='input-group-btn'>
@@ -32,7 +35,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td>
+                        <td class='middle'>
                             <div class='form-group col-xs-3'>
                                 <div class='input-group'>
                                     <span class='input-group-addon'>x</span>
@@ -93,10 +96,10 @@
             $tr.find('input').prop('disabled', !is_selected);
             $tr.toggleClass('success');
             $this.toggleClass('btn-success btn-danger');
-            if (is_selected)
-            {
-                $this.parent().next().focus()
-            } else {
+            if (is_selected) {
+                $this.parent().next().focus();
+            } 
+            else {
                 $this.parents('.form-group').removeClass('has-error');
             }
         });

@@ -1,0 +1,12 @@
+.index-table>thead>tr>th.middle,
+.index-table>tbody>tr>th.middle,
+.index-table>tfoot>tr>th.middle,
+.index-table>thead>tr>td.middle,
+.index-table>tbody>tr>td.middle,
+.index-table>tfoot>tr>td.middle { vertical-align:middle; }
+.index-table>thead>tr>th.center,
+.index-table>tbody>tr>th.center,
+.index-table>tfoot>tr>th.center,
+.index-table>thead>tr>td.center,
+.index-table>tbody>tr>td.center,
+.index-table>tfoot>tr>td.center { text-align:center; }
