@@ -1,1 +1,34 @@
-{{ record.id }}
+{% extends "clip/base.html" %}
+
+{% block title %}计算结果{% endblock %}
+
+{% block content %}
+<div class='panel panel-primary'>
+    <div class='panel-heading'>计算结果</div>
+    <table class='table table-bordered'>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>尺寸</th>
+                <th>数量</th>
+            </tr>
+        </thead>
+        {% for name , value in results.items %}
+        {% for l, num in value.items %}
+        <tr>
+            {% if forloop.first %}
+            <td rowspan='{{ value | length }}'><strong>{{ name }}</strong></td>
+            {% endif %}
+            <td>{{ l }}</td>
+            <td>{{ num }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+</script>
+{% endblock %}

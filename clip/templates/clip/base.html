@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <link rel='stylesheet' href='{% static "clip/bootstrap/css/bootstrap.min.css" %}'>
+        <link rel='stylesheet' href='{% static "clip/font-awesome/css/font-awesome.min.css" %}'>
+        <script type='text/javascript' src='{% static "clip/js/jquery-1.11.0.min.js" %}' ></script>
+        <script type='text/javascript' src='{% static "clip/bootstrap/js/bootstrap.min.js" %}' ></script>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div id='container' class='container' style='padding-top:10px'>
+            {% block content %}
+            {% endblock %}
+        </div>
+        {% block script %}
+        {% endblock %}
+    </body>
+</html>

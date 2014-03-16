@@ -51,7 +51,24 @@ def submit(request):
 
 def record(request, record_id):
     record = Record.objects.get(pk=record_id)
+    results = {}
+    record_products = record.recordproduct_set.all()
+    for record_product in record_products:
+        name = record_product.product.product_name.name
+        length = record_product.length
+        num = record_product.num
+        if results.has_key(name):
+            result_name = results[name]
+            if result_name.has_key(length):
+                results[name][length] += num
+            else:
+                results[name][length] = num
+        else:
+            results[name] = { length : num }
+
     context = {
-            'record' : record
+            'record' : record,
+            'record_windows' : record.recordwindow_set,
+            'results' : results,
             }
     return render(request, "clip/record.html", context)
