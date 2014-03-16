@@ -41,7 +41,7 @@ class Record(models.Model):
     create_time = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return str(self.create_time.datetime)
+        return str(self.create_time)
 
 class RecordWindow(models.Model):
     record = models.ForeignKey(Record)
