@@ -3,56 +3,72 @@
   "pk": 1, 
   "model": "clip.window", 
   "fields": {
-    "name": "<+>"
+    "need_m": false, 
+    "name": "<+>", 
+    "need_z": false
   }
 },
 {
   "pk": 2, 
   "model": "clip.window", 
   "fields": {
-    "name": "<+++>"
+    "need_m": false, 
+    "name": "<+++>", 
+    "need_z": false
   }
 },
 {
   "pk": 3, 
   "model": "clip.window", 
   "fields": {
-    "name": "| <+>"
+    "need_m": true, 
+    "name": "| <+>", 
+    "need_z": false
   }
 },
 {
   "pk": 4, 
   "model": "clip.window", 
   "fields": {
-    "name": "| | | <+++>"
+    "need_m": true, 
+    "name": "| | | <+++>", 
+    "need_z": false
   }
 },
 {
   "pk": 5, 
   "model": "clip.window", 
   "fields": {
-    "name": "<+> |"
+    "need_m": true, 
+    "name": "<+> |", 
+    "need_z": false
   }
 },
 {
   "pk": 6, 
   "model": "clip.window", 
   "fields": {
-    "name": "<+++> | | |"
+    "need_m": true, 
+    "name": "<+++> | | |", 
+    "need_z": false
   }
 },
 {
   "pk": 7, 
   "model": "clip.window", 
   "fields": {
-    "name": "| | | <+++> | | |"
+    "need_m": true, 
+    "name": "| | | <+++> | | |", 
+    "need_z": true
   }
 },
 {
   "pk": 8, 
   "model": "clip.window", 
   "fields": {
-    "name": "| <+> |"
+    "need_m": true, 
+    "name": "| <+> |", 
+    "need_z": true
   }
 },
 {
