@@ -11,11 +11,14 @@
     <div class='panel-body record-window-container'>
         {% for record_window in record_windows %}
         <div class='record-window pull-left'>
-            <img class='pull-left' width='80px' height='auto' src='{% static "clip/images/" %}{{ record_window.window.id }}.png'/>
-            <p>x=<strong>{{ record_window.x }}</strong></p>
-            <p>y=<strong>{{ record_window.y }}</strong></p>
-            {% if record_window.window.need_m %}<p>m=<strong>{{ record_window.m }}</strong></p>{% endif %}
-            {% if record_window.window.need_z %}<p>z=<strong>{{ record_window.z }}</strong></p>{% endif %}
+            <div class='clearfix'>
+                <img class='pull-left' width='auto' height='80' src='{% static "clip/images/" %}{{ record_window.window.id }}.png'/>
+                <p><strong>x</strong>=<strong>{{ record_window.x }}</strong></p>
+                <p><strong>y</strong>=<strong>{{ record_window.y }}</strong></p>
+                {% if record_window.window.need_m %}<p><strong>m</strong>=<strong>{{ record_window.m }}</strong></p>{% endif %}
+                {% if record_window.window.need_z %}<p><strong>z</strong>=<strong>{{ record_window.z }}</strong></p>{% endif %}
+            </div>
+            <div class='record-window-num'> X <strong>{{ record_window.num }}</strong> </div>
         </div>
         {% endfor %}
     </div>
