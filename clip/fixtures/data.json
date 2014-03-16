@@ -72,7 +72,7 @@
   }
 },
 {
-  "pk": 10, 
+  "pk": 9, 
   "model": "clip.window", 
   "fields": {
     "need_m": true, 
@@ -982,7 +982,7 @@
   "pk": 77, 
   "model": "clip.product", 
   "fields": {
-    "window": 10, 
+    "window": 9, 
     "num": 2, 
     "product_name": 1
   }
@@ -991,7 +991,7 @@
   "pk": 78, 
   "model": "clip.product", 
   "fields": {
-    "window": 10, 
+    "window": 9, 
     "num": 1, 
     "product_name": 17
   }
@@ -1000,7 +1000,7 @@
   "pk": 79, 
   "model": "clip.product", 
   "fields": {
-    "window": 10, 
+    "window": 9, 
     "num": 2, 
     "product_name": 3
   }
@@ -1009,7 +1009,7 @@
   "pk": 80, 
   "model": "clip.product", 
   "fields": {
-    "window": 10, 
+    "window": 9, 
     "num": 1, 
     "product_name": 4
   }
@@ -1018,7 +1018,7 @@
   "pk": 81, 
   "model": "clip.product", 
   "fields": {
-    "window": 10, 
+    "window": 9, 
     "num": 1, 
     "product_name": 5
   }
@@ -1027,7 +1027,7 @@
   "pk": 82, 
   "model": "clip.product", 
   "fields": {
-    "window": 10, 
+    "window": 9, 
     "num": 1, 
     "product_name": 21
   }
@@ -1036,7 +1036,7 @@
   "pk": 83, 
   "model": "clip.product", 
   "fields": {
-    "window": 10, 
+    "window": 9, 
     "num": 1, 
     "product_name": 22
   }
@@ -1045,7 +1045,7 @@
   "pk": 84, 
   "model": "clip.product", 
   "fields": {
-    "window": 10, 
+    "window": 9, 
     "num": 2, 
     "product_name": 10
   }
