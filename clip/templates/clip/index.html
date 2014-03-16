@@ -2,13 +2,76 @@
 {% load staticfiles %}
 <html>
     <head>
-        <link rel="stylesheet" href="{% static 'clip/bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'clip/bootstrap/css/bootstrap-theme.min.css' %}">
-        <link rel="stylesheet" href="{% static 'clip/font-awesome/css/font-awesome.min.css' %}">
-        <script type='text/javascript' src="{% static 'clip/js/jquery-1.11.0.min.js' %}" ></script>
-        <script type='text/javascript' src="{% static 'clip/bootstrap/js/bootstrap.min.js' %}" ></script>
+        <link rel='stylesheet' href='{% static "clip/bootstrap/css/bootstrap.min.css" %}'>
+        <link rel='stylesheet' href='{% static "clip/font-awesome/css/font-awesome.min.css" %}'>
+        <script type='text/javascript' src='{% static "clip/js/jquery-1.11.0.min.js" %}' ></script>
+        <script type='text/javascript' src='{% static "clip/bootstrap/js/bootstrap.min.js" %}' ></script>
     </head>
     <body>
-        index
+        <div class='container' style='padding-top:10px'>
+            <form class='form-inline' action='{% url "clip:result" %}' role='form' method='post'>{% csrf_token %}
+                <div class='panel panel-primary'>
+                    <div class='panel-heading'>进行选择</div>
+                    <!-- Table -->
+                    <table class='table table-striped table-hover'>
+                        <thead>
+                            <tr>
+                                <th style='width:3%'>#</th>
+                                <th style='width:22%'>样式</th>
+                                <th style='width:60%'>尺寸</th>
+                                <th style='width:15%'>数量</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for window in windows %}
+                            <tr>
+                                <td>{{ window.id }}</td>
+                                <td>{{ window.name }}</td>
+                                <td>
+                                    <div class='from-group col-xs-3'>
+                                        <div class='input-group'>
+                                            <span class='input-group-addon'>x</span>
+                                            <input type='number' step=0.01 class='form-control' name='x_{{ window.id }}'>
+                                        </div>
+                                    </div>
+                                    <div class='from-group col-xs-3'>
+                                        <div class='input-group'>
+                                            <span class='input-group-addon'>y</span>
+                                            <input type='number' step=0.01 class='form-control' name='y_{{ window.id }}'>
+                                        </div>
+                                    </div>
+                                    <div class='from-group col-xs-3'>
+                                        <div class='input-group'>
+                                            <span class='input-group-addon'>m</span>
+                                            <input type='number' step=0.01 class='form-control' name='m_{{ window.id }}'>
+                                        </div>
+                                    </div>
+                                    <div class='from-group col-xs-3'>
+                                        <div class='input-group'>
+                                            <span class='input-group-addon'>z</span>
+                                            <input type='number' step=0.01 class='form-control' name='z_{{ window.id }}'>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class='from-group'>
+                                        <div class='input-group'>
+                                            <span class='input-group-addon'>数量</span>
+                                            <input type='number' class='form-control' name='num_{{ window.id }}'>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan=4 class='text-right'>
+                                    <button type='submit' class='btn btn-primary btn-lg '>提交</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
