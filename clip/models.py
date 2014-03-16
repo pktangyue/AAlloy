@@ -17,6 +17,7 @@ class Material(models.Model):
 class ProductName(models.Model):
     name = models.CharField(max_length=50)
     formula = models.CharField(max_length=100)
+    order = models.IntegerField(default=0)
 
     def __unicode__(self):
         return self.name  + "(" + self.formula + ")"
