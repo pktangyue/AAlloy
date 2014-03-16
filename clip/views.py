@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from clip.models import Window
-from django.core.context_processors import csrf
-from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect, HttpResponse
+from django.core.urlresolvers import reverse
 
 def index(request):
     context = {
@@ -9,7 +9,10 @@ def index(request):
             }
     return render(request, 'clip/index.html', context)
 
+def submit(request):
+    return HttpResponseRedirect(reverse('clip:result'))
+
 def result(request):
-    c = {}
-    c.update(csrf(request))
-    return render_to_response("clip/result.html", c)
+    context = {
+            }
+    return render(request, "clip/result.html", context)

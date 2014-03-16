@@ -3,5 +3,6 @@ from clip import views
 
 urlpatterns = patterns ('',
         url(r'^$', views.index, name = 'index' ),
-        url(r'^result/', views.result, name = 'result' )
+        url(r'^submit/', views.submit, name = 'submit' ),
+        url(r'^result/', views.result, name = 'result' ),
         )
