@@ -13,7 +13,9 @@ def index(request):
 
 def submit(request):
     windows = Window.objects.all()
-    results = []
+
+    record = None
+
     for window in windows:
         id = window.pk
         has_num = request.POST.get('id_%d' % id, False);
@@ -27,8 +29,10 @@ def submit(request):
         m = Decimal(request.POST.get('m_%d' % id, 0))
         z = Decimal(request.POST.get('z_%d' % id, 0))
 
-        record = Record()
-        record.save()
+        if record == None:
+            record = Record()
+            record.save()
+
         record.recordwindow_set.create(window = window, x = x, y = y, m = m, z = z, num = num)
 
         products = window.product_set.all()
@@ -41,7 +45,7 @@ def submit(request):
 
             record.recordproduct_set.create(product = product, length = length, num = product_num)
 
-        record.save()
+    record.save()
 
     return HttpResponseRedirect(reverse('clip:result'))
 
