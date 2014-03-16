@@ -57,14 +57,26 @@ WSGI_APPLICATION = 'application.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+if 'SERVER_SOFTWARE' in os.environ:
+    from sae.const import (
+        MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
+    )
+else:
+    # Make `python manage.py syncdb` works happy!
+    MYSQL_HOST = 'localhost'
+    MYSQL_PORT = ''
+    MYSQL_USER = 'root'
+    MYSQL_PASS = 'tang4163'
+    MYSQL_DB   = 'aalloy'
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'aalloy',
-        'USER': 'root',
-        'PASSWORD': 'tang4163',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE':   'django.db.backends.mysql',
+        'NAME':     MYSQL_DB,
+        'USER':     MYSQL_USER,
+        'PASSWORD': MYSQL_PASS,
+        'HOST':     MYSQL_HOST,
+        'PORT':     MYSQL_PORT,
     }
 }
 
