@@ -11,7 +11,11 @@
 .index-table>tbody>tr>td.center,
 .index-table>tfoot>tr>td.center { text-align:center; }
 
+.index-material { margin-left: 50px;} 
+
 .record-window-container { padding: 0 5px; }
 .record-window { margin: 5px 12px 0 0; }
 .record-window p { margin-left: 90px; margin-bottom: 0px; }
 .record-window-num { margin-left: 36px;}
+
+.record-window-title { text-align: center; font-size: 16px;}

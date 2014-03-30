@@ -70,7 +70,16 @@
                     <tr>
                         <td colspan=4 class='text-right info'>
                             <h4>
-                                总计：<span id='clip-total-num'>0</span> 件
+                                <div class='pull-left index-material'>
+                                    <strong class='pull-left'>材料:&nbsp;&nbsp;</strong>
+                                    <select class='pull-left' name='material_id' required>
+                                        <option value=''>---</option>
+                                        {% for material in materials %}
+                                        <option value='{{ material.id }}'>{{ material.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class='pull-right'>总计：<span id='clip-total-num'>0</span> 件 </div>
                             </h4>
                         </td>
                     </tr>

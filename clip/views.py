@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from clip.models import Window, Record
+from clip.models import Window, Record, Material
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from decimal import Decimal
 import parser
 from collections import OrderedDict
+import math
 
 def index(request):
     context = {
-            'windows' : Window.objects.all
+            'windows' : Window.objects.all,
+            'materials' : Material.objects.all,
             }
     return render(request, 'clip/index.html', context)
 
@@ -16,6 +18,7 @@ def submit(request):
     windows = Window.objects.all()
 
     record = None
+    material_id = request.POST.get('material_id', 0)
 
     for window in windows:
         id = window.pk
@@ -32,6 +35,7 @@ def submit(request):
 
         if record == None:
             record = Record()
+            record.material = Material.objects.get(pk = material_id)
             record.save()
 
         record.recordwindow_set.create(window = window, x = x, y = y, m = m, z = z, num = num)
@@ -39,9 +43,12 @@ def submit(request):
         products = window.product_set.all()
         for product in products:
             formula = product.product_name.formula
-            a = product.producttrim_set.get(material_id=1).trim_length
+            a = product.producttrim_set.get(material_id = material_id).trim_length
             code = parser.expr(formula).compile()
             length = eval(code)
+            print length
+            length = math.floor(length * 10) / 10.0
+            print length
             product_num = num * product.num
 
             record.recordproduct_set.create(product = product, length = length, num = product_num)

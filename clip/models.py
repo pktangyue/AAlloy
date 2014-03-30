@@ -40,6 +40,7 @@ class ProductTrim(models.Model):
 
 class Record(models.Model):
     create_time = models.DateTimeField(auto_now=True)
+    material = models.ForeignKey(Material, default = 1)
 
     def __unicode__(self):
         return str(self.create_time)
