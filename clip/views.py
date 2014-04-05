@@ -79,3 +79,7 @@ def record(request, record_id):
             'results' : results,
             }
     return render(request, "clip/record.html", context)
+
+def recent(request):
+    record_id = Record.objects.latest('pk').pk
+    return record(request, record_id)

@@ -1,3 +1,5 @@
+.panel-heading{padding:8px 15px;}
+
 .base-nav{border-bottom-color:#6f5499;min-height:40px;margin-bottom:10px;}
 .base-nav .navbar-brand,
 .base-nav .navbar-nav>li>a{color:#563d7c;font-weight:500;padding:10px;height:40px;}
@@ -30,4 +32,4 @@
 .record-window p{margin-left:90px;margin-bottom:0px;}
 .record-window-num{margin-left:36px;}
 
-.record-window-title{text-align:right;font-size:16px;}
+.record-window-title{text-align:right;}
