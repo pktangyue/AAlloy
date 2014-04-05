@@ -32,4 +32,5 @@
 .record-window p{margin-left:90px;margin-bottom:0px;}
 .record-window-num{margin-left:36px;}
 
-.record-window-title{text-align:right;}
+.record-window-title{text-align:left;}
+.record-window-title button{margin-top:-7px;}

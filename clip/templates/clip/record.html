@@ -6,23 +6,12 @@
 {% block content %}
 <div class='panel panel-primary'>
     <div class='panel-heading record-window-title'>
-        <span class='pull-left'>计算结果</span>
-        <button class='btn btn-success pull-right hidden-print' style='margin-top:-7px;' onclick='javascript:window.print();'>打印</button>
-        <span>材料: <u>{{ record.material.name }}</u></span>
+        <span>计算结果</span>
+        <button class='btn btn-success pull-right hidden-print' onclick='javascript:window.print();'>打印</button>
+        <span class='pull-right'>材料: <u>{{ record.material.name }}</u></span>
     </div>
     <div class='panel-body record-window-container'>
-        {% for record_window in record_windows %}
-        <div class='record-window pull-left'>
-            <div class='clearfix'>
-                <img class='pull-left' width='auto' height='80' src='{% static "clip/images/" %}{{ record_window.window.id }}.png'/>
-                <p><strong>x</strong>=<strong>{{ record_window.x }}</strong></p>
-                <p><strong>y</strong>=<strong>{{ record_window.y }}</strong></p>
-                {% if record_window.window.need_m %}<p><strong>m</strong>=<strong>{{ record_window.m }}</strong></p>{% endif %}
-                {% if record_window.window.need_z %}<p><strong>z</strong>=<strong>{{ record_window.z }}</strong></p>{% endif %}
-            </div>
-            <div class='record-window-num'><strong>{{ record_window.num }}个</strong> </div>
-        </div>
-        {% endfor %}
+        {% include "clip/component/window.html" with record_windows=record_windows %}
     </div>
     <table class='table table-striped table-hover table-bordered'>
         <thead>
@@ -31,18 +20,29 @@
                 <th>尺寸/数量</th>
             </tr>
         </thead>
-        {% for order , value1 in results.items %}
-        {% for name , value in value1.items %}
-        <tr>
-            <td><strong>{{ name }}</strong></td>
-            <td>
-                {% for l, num in value.items %}
-                <strong>{{ l }}</strong>=<strong style='margin-right:15px;'>{{ num }}</strong>
-                {% endfor %}
-            </td>
-        </tr>
-        {% endfor %}
-        {% endfor %}
+        <tbody>
+            {% for order , value1 in results.items %}
+            {% for name , value in value1.items %}
+            <tr>
+                <td><strong>{{ name }}</strong></td>
+                <td>
+                    {% for l, num in value.items %}
+                    <strong>{{ l }}</strong>=<strong style='margin-right:15px;'>{{ num }}</strong>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+        {% if is_show_foot %}
+        <tfoot class='hidden-print'>
+            <tr>
+                <td colspan='2'>
+                    <a href='{% url 'clip:history' %}' class='btn btn-info pull-left'>返回</a>
+                </td>
+            </tr>
+        </tfoot>
+        {% endif %}
     </table>
 </div>
 {% endblock %}

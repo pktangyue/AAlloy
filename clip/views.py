@@ -57,7 +57,7 @@ def submit(request):
 
     return HttpResponseRedirect(reverse('clip:record', args=[record.pk]))
 
-def record(request, record_id):
+def record(request, record_id, is_show_foot = True):
     record = Record.objects.get(pk=record_id)
     results = {}
     record_products = record.recordproduct_set.all()
@@ -77,9 +77,17 @@ def record(request, record_id):
             'record' : record,
             'record_windows' : record.recordwindow_set.all(),
             'results' : results,
+            'is_show_foot' : is_show_foot
             }
     return render(request, "clip/record.html", context)
 
 def recent(request):
     record_id = Record.objects.latest('pk').pk
-    return record(request, record_id)
+    return record(request, record_id, False)
+
+def history(request):
+    records = Record.objects.order_by('id')
+    context = {
+            'records' : records
+            }
+    return render(request, "clip/history.html", context)

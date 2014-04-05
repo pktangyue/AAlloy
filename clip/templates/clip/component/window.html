@@ -1,0 +1,13 @@
+{% load staticfiles %}
+{% for record_window in record_windows %}
+<div class='record-window pull-left'>
+    <div class='clearfix'>
+        <img class='pull-left' width='auto' height='80' src='{% static "clip/images/" %}{{ record_window.window.id }}.png'/>
+        <p><strong>x</strong>=<strong>{{ record_window.x }}</strong></p>
+        <p><strong>y</strong>=<strong>{{ record_window.y }}</strong></p>
+        {% if record_window.window.need_m %}<p><strong>m</strong>=<strong>{{ record_window.m }}</strong></p>{% endif %}
+        {% if record_window.window.need_z %}<p><strong>z</strong>=<strong>{{ record_window.z }}</strong></p>{% endif %}
+    </div>
+    <div class='record-window-num'><strong>{{ record_window.num }}个</strong> </div>
+</div>
+{% endfor %}
