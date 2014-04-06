@@ -12,25 +12,25 @@
 .base-nav .navbar-header .navbar-toggle:hover,
 .base-nav .navbar-header .navbar-toggle:focus{background-color:#f9f9f9;border-color:#f9f9f9;}
 
-.index-table>thead>tr>th.middle,
-.index-table>tbody>tr>th.middle,
-.index-table>tfoot>tr>th.middle,
-.index-table>thead>tr>td.middle,
-.index-table>tbody>tr>td.middle,
-.index-table>tfoot>tr>td.middle{vertical-align:middle;}
-.index-table>thead>tr>th.center,
-.index-table>tbody>tr>th.center,
-.index-table>tfoot>tr>th.center,
-.index-table>thead>tr>td.center,
-.index-table>tbody>tr>td.center,
-.index-table>tfoot>tr>td.center{text-align:center;}
+.clip-table>thead>tr>th.middle,
+.clip-table>tbody>tr>th.middle,
+.clip-table>tfoot>tr>th.middle,
+.clip-table>thead>tr>td.middle,
+.clip-table>tbody>tr>td.middle,
+.clip-table>tfoot>tr>td.middle{vertical-align:middle;}
+.clip-table>thead>tr>th.center,
+.clip-table>tbody>tr>th.center,
+.clip-table>tfoot>tr>th.center,
+.clip-table>thead>tr>td.center,
+.clip-table>tbody>tr>td.center,
+.clip-table>tfoot>tr>td.center{text-align:center;}
 
 .index-material{margin-left:50px;}
 
-.record-window-container{padding:0 5px;}
+.clip-body{padding:0 5px;}
 .record-window{margin:5px 12px 0 0;}
 .record-window p{margin-left:90px;margin-bottom:0px;}
 .record-window-num{margin-left:36px;}
 
-.record-window-title{text-align:left;}
-.record-window-title button{margin-top:-7px;}
+.clip-heading{text-align:left;}
+.clip-heading button{margin-top:-7px;}

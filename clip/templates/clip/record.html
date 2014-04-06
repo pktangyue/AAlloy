@@ -5,15 +5,15 @@
 
 {% block content %}
 <div class='panel panel-primary'>
-    <div class='panel-heading record-window-title'>
+    <div class='panel-heading clip-heading'>
         <span>计算结果</span>
         <button class='btn btn-success pull-right hidden-print' onclick='javascript:window.print();'>打印</button>
         <span class='pull-right'>材料: <u>{{ record.material.name }}</u></span>
     </div>
-    <div class='panel-body record-window-container'>
+    <div class='panel-body clip-body'>
         {% include "clip/component/window.html" with record_windows=record_windows %}
     </div>
-    <table class='table table-striped table-hover table-bordered'>
+    <table class='table table-striped table-hover table-bordered clip-table'>
         <thead>
             <tr>
                 <th width='15%'>#&nbsp;&nbsp;&nbsp;&nbsp;</th>
