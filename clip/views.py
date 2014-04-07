@@ -15,30 +15,31 @@ def index(request):
     return render(request, 'clip/index.html', context)
 
 def submit(request):
-    windows = Window.objects.all()
+    material_id = request.POST.get('material_id', 0)
+    arr_id = request.POST.getlist('id[]');
+    arr_num = request.POST.getlist('num[]');
+    arr_x = request.POST.getlist('x[]');
+    arr_y = request.POST.getlist('y[]');
+    arr_m = request.POST.getlist('m[]');
+    arr_z = request.POST.getlist('z[]');
 
     record = None
-    material_id = request.POST.get('material_id', 0)
 
-    for window in windows:
-        id = window.pk
-        has_num = request.POST.get('id_%d' % id, False);
-        if not has_num:
-            continue
-        num = int(request.POST.get('num_%d' % id, 0))
-        if num == 0:
-            continue
-        x = Decimal(request.POST.get('x_%d' % id, 0))
-        y = Decimal(request.POST.get('y_%d' % id, 0))
-        m = Decimal(request.POST.get('m_%d' % id, 0))
-        z = Decimal(request.POST.get('z_%d' % id, 0))
+    for i in range(len(arr_id)):
+        id = int(arr_id[i]);
+        num = int(arr_num[i]);
+        x = Decimal(arr_x[i]);
+        y = Decimal(arr_y[i]);
+        m = Decimal(arr_m[i]);
+        z = Decimal(arr_z[i]);
 
         if record == None:
             record = Record()
             record.material = Material.objects.get(pk = material_id)
             record.save()
 
-        record.recordwindow_set.create(window = window, x = x, y = y, m = m, z = z, num = num)
+        window = Window.objects.get(pk = id)
+        record.recordwindow_set.create(window = window, x = x, y = y, m = m, z = z, num = num);
 
         products = window.product_set.all()
         for product in products:
@@ -46,9 +47,7 @@ def submit(request):
             a = product.producttrim_set.get(material_id = material_id).trim_length
             code = parser.expr(formula).compile()
             length = eval(code)
-            print length
             length = math.floor(length * 10) / 10.0
-            print length
             product_num = num * product.num
 
             record.recordproduct_set.create(product = product, length = length, num = product_num)

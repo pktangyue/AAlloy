@@ -34,3 +34,8 @@
 
 .clip-heading{text-align:left;}
 .clip-heading button{margin-top:-7px;}
+
+.modal-windows{width:450px;}
+.modal-windows a{display:inline-block;width:120px;margin:5px;padding:10px;border:solid 1px transparent;}
+.modal-windows a:hover,
+.modal-windows a:active{border:solid 1px #428bca;}
