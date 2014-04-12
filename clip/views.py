@@ -58,7 +58,7 @@ def submit(request):
 
 def record(request, record_id, is_show_foot = True):
     record = Record.objects.get(pk=record_id)
-    results = {}
+    results = OrderedDict()
     record_products = record.recordproduct_set.all()
     for record_product in record_products:
         name = record_product.product.product_name.name
@@ -68,7 +68,7 @@ def record(request, record_id, is_show_foot = True):
         try:
             results[order][name][length] += num
         except:
-            results.setdefault(order,{}).setdefault(name,{}).setdefault(length,num)
+            results.setdefault(order,OrderedDict()).setdefault(name,OrderedDict()).setdefault(length,num)
 
 
     results = OrderedDict(sorted(results.items(), key=lambda t: t[0]))
