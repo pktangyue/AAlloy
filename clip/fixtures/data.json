@@ -210,8 +210,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "z-a", 
-    "name": "\u4e2d\u67f11", 
-    "order": 401
+    "name": "\u4e2d\u67f1", 
+    "order": 400
   }
 },
 {
@@ -219,8 +219,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-z-m-a", 
-    "name": "\u4e2d\u67f12", 
-    "order": 402
+    "name": "\u4e2d\u67f1", 
+    "order": 400
   }
 },
 {
@@ -228,8 +228,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "z-a", 
-    "name": "\u8fb9\u76d61", 
-    "order": 501
+    "name": "\u8fb9\u76d6", 
+    "order": 500
   }
 },
 {
@@ -237,8 +237,8 @@
   "model": "clip.productname", 
   "fields": {
     "formula": "x-z-m-a", 
-    "name": "\u8fb9\u76d62", 
-    "order": 502
+    "name": "\u8fb9\u76d6", 
+    "order": 500
   }
 },
 {
